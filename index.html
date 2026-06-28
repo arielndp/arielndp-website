@@ -7,66 +7,31 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <span class="logo">AN</span>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <nav>
+    <a href="#home" class="tab active" onclick="switchTab('home', this)">Home</a>
+    <a href="#about" class="tab" onclick="switchTab('about', this)">About</a>
+    <a href="#projects" class="tab" onclick="switchTab('projects', this)">Projects</a>
+    <a href="#contact" class="tab" onclick="switchTab('contact', this)">Contact</a>
+  </nav>
 
   <main>
-    <section class="hero">
-      <h1>Hi, I'm <span class="highlight">Ariel Nunez</span></h1>
-      <p class="subtitle">— Add your tagline here —</p>
-      <a href="#contact" class="btn">Get in touch</a>
+    <section id="home" class="page active">
+      <h1>Ariel Nunez</h1>
     </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Write a few sentences about yourself here. What do you do, what are you
-        interested in, and what are you currently working on?
-      </p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="card">
-          <h3>Project One</h3>
-          <p>Short description of this project and what you built or learned.</p>
-          <a href="#" class="tag">GitHub</a>
-        </div>
-        <div class="card">
-          <h3>Project Two</h3>
-          <p>Short description of this project and what you built or learned.</p>
-          <a href="#" class="tag">GitHub</a>
-        </div>
-        <div class="card">
-          <h3>Project Three</h3>
-          <p>Short description of this project and what you built or learned.</p>
-          <a href="#" class="tag">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Feel free to reach out — I'm always open to new opportunities and conversations.</p>
-      <div class="links">
-        <a href="mailto:your@email.com">Email</a>
-        <a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
-      </div>
-    </section>
+    <section id="about" class="page"></section>
+    <section id="projects" class="page"></section>
+    <section id="contact" class="page"></section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Ariel Nunez</p>
-  </footer>
+  <script>
+    function switchTab(id, el) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      el.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
